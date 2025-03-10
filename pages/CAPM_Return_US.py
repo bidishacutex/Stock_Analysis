@@ -7,7 +7,7 @@ import pandas_datareader.data as web
 import datetime
 import capm_functions
 
-st.set_page_config(page_title= "CAPM_Calculate",
+st.set_page_config(page_title= "CAPM Return",
                    page_icon= "chart_with_upwards_trend",
                    layout= "wide",
                    initial_sidebar_state= "auto")
@@ -62,6 +62,8 @@ stocks_df['Date'] = stocks_df['Date'].apply(lambda x:str(x)[:10])
 stocks_df['Date'] = pd.to_datetime(stocks_df['Date'])
 stocks_df = pd.merge(stocks_df, SP500, on= 'Date', how = 'inner')
 
+
+
 col1, col2 = st.columns([1,1])
 with col1:
     st.markdown("### Dataframe Head")
@@ -96,6 +98,7 @@ beta_df = pd.DataFrame(columns = ['Stock', 'Beta Value'])
 beta_df['Stock'] = beta.keys()
 beta_df['Beta Value'] = [str(round(i,2)) for i in beta.values()]
 
+col1, col2 = st.columns(2)
 with col1:
     st.markdown('### Calculated Beta Value')
     st.dataframe(beta_df, use_container_width= True)

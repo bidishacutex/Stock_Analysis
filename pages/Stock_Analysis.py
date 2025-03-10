@@ -110,3 +110,41 @@ if not data.empty:
 
 else:
     st.warning("No historical data available for the selected date range.")
+
+col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12 = st.columns(12)
+
+num_period = ''  # Initialize the variable
+
+with col1:
+    if st.button('1D'):
+        num_period = '1d'
+with col2:
+    if st.button('5D'):
+        num_period = '5d'
+with col3:
+    if st.button('1M'):
+        num_period = '1mo'
+with col4:
+    if st.button('6M'):
+        num_period = '6mo'
+with col5:
+    if st.button('YTD'):
+        num_period = 'ytd'
+with col6:
+    if st.button('1Y'):
+        num_period = '1y'
+with col7:
+    if st.button('5Y'):
+        num_period = '5y'
+with col8:
+    if st.button('MAX'):
+        num_period = 'max'
+
+col1, col2, col3 = st.columns([1,1,4])
+with col1:
+    chart_type = st.selectbox('',('Candle','Line'))
+with col2:
+    if chart_type == 'Candle':
+        indicators = st.selectbox('',('RSI','MACD'))
+    else:
+        indicators = st.selectbox('',('RSI','Moving Average','MACD'))

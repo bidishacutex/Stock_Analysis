@@ -8,7 +8,7 @@ from pages.utils.plotly_figure import plotly_table  # Assuming you have a custom
 
 # Page configuration
 st.set_page_config(page_title="Indian Stock Analysis",
-                   page_icon="📈",
+                   page_icon="rupee:",
                    layout="wide",
                    initial_sidebar_state="auto")
 
@@ -36,7 +36,7 @@ with col3:
     end_date = st.date_input("Choose End Date", datetime.date(today.year, today.month, today.day))
 
 # Stock Info
-st.subheader(f"Stock Information: {ticker}")
+st.subheader(ticker)
 
 try:
     stock = yf.Ticker(ticker)
@@ -52,7 +52,7 @@ try:
 
     with col1:
         df = pd.DataFrame(index=['Market Cap', 'Beta', 'EPS', 'PE Ratio'])
-        df['Value'] = [
+        df[''] = [
             info.get('marketCap', 'N/A'),
             info.get('beta', 'N/A'),
             info.get('trailingEps', 'N/A'),
@@ -64,7 +64,7 @@ try:
     with col2:
         df = pd.DataFrame(index=['Quick Ratio', 'Revenue per Share', 'Profit Margins',
                                  'Debt to Equity', 'Return on Equity'])
-        df['Value'] = [
+        df[''] = [
             info.get('quickRatio', 'N/A'),
             info.get('revenuePerShare', 'N/A'),
             info.get('profitMargins', 'N/A'),

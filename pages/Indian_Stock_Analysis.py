@@ -4,7 +4,13 @@ import pandas as pd
 import plotly.graph_objects as go
 import datetime
 import ta
-from pages.utils.plotly_figure import plotly_table  # Assuming you have a custom table plot function
+from pages.utils.plotly_figure import plotly_table
+from pages.utils.plotly_figure import filter_data
+from pages.utils.plotly_figure import close_chart
+from pages.utils.plotly_figure import candlestick
+from pages.utils.plotly_figure import Moving_average
+from pages.utils.plotly_figure import RSI
+from pages.utils.plotly_figure import MACD
 
 # Page configuration
 st.set_page_config(page_title="Indian Stock Analysis",
@@ -137,10 +143,13 @@ if not data.empty:
 else:
     st.warning("No historical data available for the selected date range.")
 
-# Time Period Buttons
-col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8)
 
-num_period = ''
+
+# Columns for period selection
+col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12 = st.columns(12)
+
+# Initialize num_period
+num_period = '1y'  # Set default period as 1y
 
 with col1:
     if st.button('1D'):
@@ -167,7 +176,7 @@ with col8:
     if st.button('MAX'):
         num_period = 'max'
 
-# Indicator Options
+# Chart type and indicators selection
 col1, col2, col3 = st.columns([1, 1, 4])
 
 with col1:
@@ -179,4 +188,32 @@ with col2:
     else:
         indicators = st.selectbox('Indicators', ('RSI', 'Moving Average', 'MACD'))
 
-# Optional: Add logic for charts based on chart_type and indicators if needed
+# Ticker input
+ticker = st.text_input('Enter ticker:', value='AAPL')  # Default ticker for testing
+
+# Fetch data
+ticker_obj = yf.Ticker(ticker)
+data = ticker_obj.history(period='max')
+
+# Logic for displaying charts
+if chart_type == 'Candle':
+    if indicators == 'RSI':
+        st.plotly_chart(candlestick(data, num_period), use_container_width=True)
+        st.plotly_chart(RSI(data, num_period), use_container_width=True)
+
+    elif indicators == 'MACD':
+        st.plotly_chart(candlestick(data, num_period), use_container_width=True)
+        st.plotly_chart(MACD(data, num_period), use_container_width=True)
+
+elif chart_type == 'Line':
+    if indicators == 'RSI':
+        st.plotly_chart(close_chart(data, num_period), use_container_width=True)
+        st.plotly_chart(RSI(data, num_period), use_container_width=True)
+
+    elif indicators == 'Moving Average':
+        st.plotly_chart(Moving_average(data, num_period), use_container_width=True)
+
+    elif indicators == 'MACD':
+        st.plotly_chart(close_chart(data, num_period), use_container_width=True)
+        st.plotly_chart(MACD(data, num_period), use_container_width=True)
+

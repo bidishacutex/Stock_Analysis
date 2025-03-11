@@ -33,7 +33,7 @@ today = datetime.date.today()
 
 # User Inputs
 with col1:
-    ticker = st.text_input("Enter Indian Stock Ticker (Example: RELIANCE.NS)", "RELIANCE.NS")
+    ticker = st.text_input("Stock Ticker", "RELIANCE.NS")
 
 with col2:
     start_date = st.date_input("Choose Start Date", datetime.date(today.year-1, today.month, today.day))
@@ -189,7 +189,7 @@ with col2:
         indicators = st.selectbox('Indicators', ('RSI', 'Moving Average', 'MACD'))
 
 # Ticker input
-ticker = st.text_input('Enter ticker:', value='AAPL')  # Default ticker for testing
+ticker = st.text_input('Enter ticker:', value=ticker)  # Default ticker for testing
 
 # Fetch data
 ticker_obj = yf.Ticker(ticker)

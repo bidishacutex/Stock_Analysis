@@ -161,7 +161,7 @@ with col2:
         indicators = st.selectbox('Indicators', ('RSI', 'Moving Average', 'MACD'))
 
 # Ticker input
-ticker = st.text_input('Enter ticker:', value='AAPL')  # Default ticker for testing
+ticker = st.text_input('Enter ticker:', value=ticker)
 
 # Fetch data
 ticker_obj = yf.Ticker(ticker)

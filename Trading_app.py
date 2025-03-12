@@ -6,7 +6,7 @@ st.set_page_config(
     layout = "wide"
 )
 
-st.title("Trading Guide App :bar_chart:")
+st.title("Trading Guide App :chart_with_upwards_trend:")
 
 st.header("We provide the Greatest platform for you to collect all information prior to investing in stocks.")
 

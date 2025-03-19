@@ -46,6 +46,9 @@ forecast = get_forecast(scaled_data, differencing_order)
 # Step 7: Inverse scaling
 forecast['Close'] = inverse_scaling(scaler, forecast['Close'])
 
+# Convert forecast index to date-only (time)
+forecast.index = pd.to_datetime(forecast.index).date
+
 # Step 8: Display forecast data
 st.write('##### Forecast Data (Next 30 Days)')
 fig_tail = plotly_table(forecast.sort_index(ascending=True).round(3))

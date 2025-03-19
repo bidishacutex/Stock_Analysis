@@ -16,7 +16,7 @@ st.title("Capital Asset Pricing Model - Indian Stocks")
 default_stocks = ["RELIANCE.NS", "INFY.NS", "HDFCBANK.NS", "TCS.NS", "ICICIBANK.NS", "SBIN.NS", "LT.NS"]
 
 # User Inputs
-col1, col2, col3 = st.columns([1, 1, 1])
+col1, col2, col3 = st.columns(3)
 
 with col1:
     stock_input = st.text_area("Enter Indian stock symbols separated by commas:", ",".join(default_stocks))
@@ -54,6 +54,10 @@ for stock in stocks_list:
 
     # Keep only Date and Close prices, and rename Close column
     data = data[['Close']].reset_index()
+
+    # Convert Date to date only (no time)
+    data['Date'] = pd.to_datetime(data['Date']).dt.date
+
     data.rename(columns={'Close': stock}, inplace=True)
 
     if stocks_df is None:
@@ -78,6 +82,10 @@ nifty_df = yf.download('^NSEI', start=start, end=end)
 
 if not nifty_df.empty:
     nifty_df = nifty_df[['Close']].reset_index()
+
+    # Convert Date to date only (no time)
+    nifty_df['Date'] = pd.to_datetime(nifty_df['Date']).dt.date
+
     nifty_df.rename(columns={'Close': 'Nifty50'}, inplace=True)
 
     # Merge with stocks_df on Date
@@ -95,7 +103,7 @@ merged_df.columns = [col if isinstance(col, str) else col[0] for col in merged_d
 # ===========================
 # Display DataFrame Head/Tail
 # ===========================
-col1, col2 = st.columns([1, 1])
+col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("### Dataframe Head")
@@ -108,7 +116,7 @@ with col2:
 # ===========================
 # Plots
 # ===========================
-col1, col2 = st.columns([1, 1])
+col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("### Price of All the Stocks")

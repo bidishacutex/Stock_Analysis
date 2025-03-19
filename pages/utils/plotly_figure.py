@@ -38,8 +38,8 @@ def plotly_table(dataframe):
 
 
 def filter_data(dataframe, num_period):
-    if num_period == '1mo':
-        date = dataframe.index[-1] + dateutil.relativedelta.relativedelta(months=-1)
+    if num_period == '1d':
+        date = dataframe.index[-1] + dateutil.relativedelta.relativedelta(days=-1)
     elif num_period == '5d':
         date = dataframe.index[-1] + dateutil.relativedelta.relativedelta(days=-5)
     elif num_period == '6mo':

@@ -1,5 +1,10 @@
 
 # CAPM & Stock Prediction System
+![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg?logo=python)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
+![Platform](https://img.shields.io/badge/Platform-Web-lightgrey)
 
 **CAPM & Stock Prediction System** is a comprehensive data analysis and visualization platform built with **Streamlit**. It offers in-depth **CAPM Return Analysis**, **Stock Evaluation**, and **Stock Price Prediction** for both **Indian** and **US Stock Markets**.  
 This tool helps investors and analysts make informed decisions by providing easy-to-use, data-driven insights.
@@ -95,9 +100,9 @@ STOCK_ANALYSIS/
 
 ## 📈 Screenshots
 
-| Home Page | Indian Stock Analysis |  
-|-----------|----------------------|  
-| ![Home](images/home.png) | ![Indian Analysis](images/indian_stock_analysis.png) |  
+| Home Page | Indian Stock Analysis | US Stock Analysis |
+|-----------|----------------------|--------|  
+| ![Home](images/home.png) | ![Indian Analysis](images/indian-stock-analysis.png) | ![Indian Analysis](images/us-stock-analysis.png) |  
 
 ---
 

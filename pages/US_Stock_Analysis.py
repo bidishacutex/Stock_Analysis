@@ -19,7 +19,7 @@ st.set_page_config(page_title= "Stock Analysis",
                    layout= "wide",
                    initial_sidebar_state= "auto")
 
-st.title("Stock Analysis")
+st.title("US Stock Analysis")
 
 col1, col2, col3 = st.columns(3)
 
@@ -124,24 +124,21 @@ col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12 = st.c
 num_period = '1y'  # Set default period as 1y
 
 with col1:
-    if st.button('1D'):
-        num_period = '1d'
-with col2:
     if st.button('5D'):
         num_period = '5d'
-with col3:
+with col2:
     if st.button('6M'):
         num_period = '6mo'
-with col4:
+with col3:
     if st.button('YTD'):
         num_period = 'ytd'
-with col5:
+with col4:
     if st.button('1Y'):
         num_period = '1y'
-with col6:
+with col5:
     if st.button('5Y'):
         num_period = '5y'
-with col7:
+with col6:
     if st.button('MAX'):
         num_period = 'max'
 

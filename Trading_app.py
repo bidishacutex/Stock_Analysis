@@ -6,22 +6,41 @@ st.set_page_config(
     layout = "wide"
 )
 
-st.title("Trading Guide App :chart_with_upwards_trend:")
+st.title("CAPM & Stock Prediction System :chart_with_upwards_trend:")
 
-st.header("We provide the Greatest platform for you to collect all information prior to investing in stocks.")
+st.header("A Comprehensive Platform for Data-Driven Investment Decisions in Indian and US Stock Markets")
 
 st.image("app.jpg")
 
-st.markdown("## We provide the following services:")
+st.markdown("## Key Features & Services")
 
-st.markdown("#### :one: Stock Information")
-st.write("Through this page, you can see all the information about stock. ")
+st.markdown("#### :one: Indian & US Stock Market Analysis")
+st.write(
+    "Gain insights into historical stock data, including trends, key financial indicators, and market behavior. "
+    "Analyze both Indian and US stock markets to support informed and diversified investment strategies."
+)
 
-st.markdown("#### :two: Stock Prediction")
-st.write("You can explore the predicted closing prices for the next 30 days based on historical stock data and advanced forecasting techniques, helping you make informed investment decisions.")
+st.markdown("#### :two: Indian Stock Price Prediction")
+st.write(
+    "Get dedicated stock price predictions for Indian stocks. "
+    "Forecast future closing prices for the next 30 days based on historical data and advanced machine learning models. "
+    "This feature empowers investors focusing on Indian equity markets to make proactive and informed investment decisions."
+)
 
-st.markdown("#### :three: CAPM Return")
-st.write("You can explore the expected return of a stock based on the CAPM model, which uses historical data and market risk factors to estimate potential investment returns.")
+st.markdown("#### :three: US Stock Price Prediction")
+st.write(
+    "Predict closing prices of US stocks with the same robust forecasting techniques. "
+    "Make data-driven decisions while investing in US markets."
+)
 
-st.markdown("#### :four: CAPM Beta")
-st.write("You can explore the CAPM Beta value, which shows how much a stock is expected to move compared to the overall market, helping you understand its risk level and volatility.")
+st.markdown("#### :four: CAPM Expected Return Analysis")
+st.write(
+    "Calculate the expected return of a stock using the Capital Asset Pricing Model (CAPM) for both Indian and US equities. "
+    "Understand the relationship between systematic risk and expected return to optimize your portfolio."
+)
+
+st.markdown("#### :five: CAPM Beta Analysis")
+st.write(
+    "Explore the Beta value of Indian and US stocks to evaluate their volatility relative to the market. "
+    "Assess the risk level of your investments and adjust your strategies accordingly."
+)

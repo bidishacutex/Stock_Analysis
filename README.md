@@ -48,27 +48,48 @@ This tool helps investors and analysts make informed decisions by providing easy
 ## 🚀 Installation & Setup
 
 1. Clone the Repository
-2. Create a Virtual Environment (Optional but recommended)
-3. Install Dependencies
-4. Run the Streamlit App
+```bash
+   git clone https://github.com/bidishacutex/Stock_Analysis.git
+   cd Stock_Analysis
+```
+
+2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+3. Run the Streamlit App
+```bash
+streamlit run Trading_app.py
+```
 
 ---
 
 ## 📂 Project Structure
 
-capm-stock-prediction-system/  
-├── app.py  
-├── components/  
-│   ├── indian_capm.py  
-│   ├── indian_stock_analysis.py  
-│   ├── indian_stock_prediction.py  
-│   ├── us_capm.py  
-│   ├── us_stock_analysis.py  
-│   └── us_stock_prediction.py  
-├── data/  
-├── models/  
-├── images/  
-└── README.md  
+```bash
+STOCK_ANALYSIS/
+├── .devcontainer/                # Dev container configurations (optional)
+├── pages/                        # Streamlit multipage directory
+│   ├── utils/                    # Utility functions
+│   │   ├── __init__.py
+│   │   ├── model_train.py
+│   │   ├── plotly_figure.py
+│   ├── Indian_CAPM_Rerurn.py
+│   ├── Indian_Stock_Analysis.py
+│   ├── Indian_Stock_Prediction.py
+│   ├── US_CAPM_Return.py
+│   ├── US_Stock_Analysis.py
+│   └── US_Stock_Prediction.py
+├── __pycache__/                  # Cache files (auto-generated)
+├── app.jpg                       # Image for app interface/banner
+├── capm_functions_india.py       # India-specific CAPM functions
+├── capm_functions.py             # General CAPM functions
+├── README.md                     # Project documentation
+├── requirements.txt              # Python dependencies
+├── sources.txt                   # Data sources or references
+├── stock_analysis.ipynb          # Jupyter notebook for stock analysis (optional)
+└── Trading_app.py                # Main entry point (Streamlit app)
+```
 
 ---
 

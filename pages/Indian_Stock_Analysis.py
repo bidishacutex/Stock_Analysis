@@ -158,21 +158,18 @@ with col2:
     if st.button('5D'):
         num_period = '5d'
 with col3:
-    if st.button('1M'):
-        num_period = '1mo'
-with col4:
     if st.button('6M'):
         num_period = '6mo'
-with col5:
+with col4:
     if st.button('YTD'):
         num_period = 'ytd'
-with col6:
+with col5:
     if st.button('1Y'):
         num_period = '1y'
-with col7:
+with col6:
     if st.button('5Y'):
         num_period = '5y'
-with col8:
+with col7:
     if st.button('MAX'):
         num_period = 'max'
 
